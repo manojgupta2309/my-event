@@ -9,7 +9,7 @@ const express = require("express"),
  server = http.createServer(app),
  io = require("socket.io")(server, { origins: '*:*'}),
  socketCB = require('./socket/cab'),
- PORT = 3500;
+  PORT = process.env.PORT || 3500;
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
